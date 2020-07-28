@@ -1,4 +1,3 @@
-from CommonOperation.Accumulation import Accumulation
 from CommonOperation.GreyModels import GMN
 import numpy as np
 
