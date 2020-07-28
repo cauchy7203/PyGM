@@ -60,17 +60,17 @@ class GMN_ResFunc():
         return x1_pred
 
 
-class DGMN_ResFunc():
-    def __init__(self):
-        pass
-
-    def compute(self, params, t, x1):
-        a = params[0]
-        u = params[-1]
-        b = params[1:-1]
-        lens = len(t)
-        c = []
-        for k in range(0, 11):
-            for m in range(0, k):
-                for i in range(1, 5):
-                    c[k] = sum((a**m)*(sum(b * x1[])))
+# class DGMN_ResFunc():
+#     def __init__(self):
+#         pass
+#
+#     def compute(self, params, t, x1):
+#         a = params[0]
+#         u = params[-1]
+#         b = params[1:-1]
+#         lens = len(t)
+#         c = []
+#         for k in range(0, 11):
+#             for m in range(0, k):
+#                 for i in range(1, 5):
+#                     c[k] = sum((a**m)*(sum(b * x1[])))
