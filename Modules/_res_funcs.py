@@ -1,8 +1,4 @@
-from M.Response_Functions import *
+from CommonOperation.Response_Functions import *
 
-res_funcs = {'gm11': GM_ResFunc()}
-
-
-mdl_name = 'gm11'
-
-res_funcs[mdl_name].compute()
+res_funcs = {'gm11': GM_ResFunc(), 'ngm11': NGM_ResFunc(), 'bergm': BernoulliGM_ResFunc(), 'dgm11': DGM_ResFunc(),
+             'gm1n':GMN_ResFunc(), 'dgm1n':DGMN_ResFunc()}
