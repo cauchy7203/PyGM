@@ -46,6 +46,31 @@ class DGM_ResFunc():
         return x1_pred
 
 
+class NDGM_ResFunc():
+    def __init__(self):
+        pass
+
+    def compute(self, params, t, x_0):
+        b1 = params[0]
+        b2 = params[1]
+        b3 = params[2]
+        n = max(t)
+        b4 = 0
+        c = 0
+        for k in range(1, n):
+            for j in range(1, k + 1):
+                c_n = j * (b1 ** (k - 1))
+                c = c + c_n
+            b4_empty = (x_0[k] - (b1 ** k) * x_0[0] - b2 * c - (1 - (b1 ** k)) / (1 - b1) * b3) * (b1 ** k)
+            b4 = b4 + b4_empty
+        x1_1 = x_0[0] + b4
+        x1_pred = np.zeros(n+1)
+        x1_pred[0] = x1_1
+        for i in range(1, n+1):
+            x1_pred[i] = b1 * x1_pred[i - 1] + b2 * i + b3
+        return x1_pred
+
+
 class GMN_ResFunc():
     def __init__(self):
         pass
