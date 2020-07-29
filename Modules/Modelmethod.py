@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def basegm(x1):
+def get_backvalue(x1):
     x1 = np.array(list(x1))
     z1 = 0.5 * (x1[1:] + x1[:-1])
     z1 = z1.reshape([-1, 1])
@@ -20,9 +20,8 @@ def construct_matrix(z1, ones_array):
     return (B)
 
 
-def params(B, Y):
+def get_params(B, Y):
     Y = np.array(list(Y))
     Y = Y.reshape([-1, 1])
-    B_y = np.matmul(B.T, Y[1:, 0]).reshape([-1, 1])
     params = np.matmul(np.linalg.pinv(B), Y[1:, 0])
     return (params)
