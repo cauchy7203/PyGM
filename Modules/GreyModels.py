@@ -9,7 +9,7 @@ class GM():
         self.mdl_name = 'gm11'
 
     def fit(self, t, x_orig):
-        x1 = Accumulation.ago(x_orig, True)
+        x1 = Accumulation.ago(x_orig, None, True)
         z1 = ModelMethod.basegm(x1)
         ones_array = np.diff(t).astype(np.float64)
         ones_array = ones_array.reshape([-1, 1])
@@ -19,9 +19,9 @@ class GM():
         return self
 
     def predict(self, t):
-        all_t = np.arange(1, np.max(t)+1)
+        all_t = np.arange(0, np.max(t))
         x1_pred = _res_funcs.res_funcs[self.mdl_name].compute(self.params, all_t, self.x_orig[0])
-        x_pred = Accumulation.ago(x1_pred, False)
+        x_pred = Accumulation.ago(x1_pred, self.x_orig[0], False)
         return x_pred
 
 
@@ -30,7 +30,7 @@ class NGM():
         self.mdl_name = 'ngm11'
 
     def fit(self, t, x_orig):
-        x1 = Accumulation.ago(x_orig, True)
+        x1 = Accumulation.ago(x_orig, None, True)
         z1 = ModelMethod.basegm(x1)
         arange_array = t[1:]
         arange_array = arange_array.reshape([-1, 1])
@@ -40,9 +40,9 @@ class NGM():
         return self
 
     def predict(self, t):
-        all_t = np.arange(1, np.max(t)+1)
+        all_t = np.arange(0, np.max(t))
         x1_pred = _res_funcs.res_funcs[self.mdl_name].compute(self.params, all_t, self.x_orig[0])
-        x_pred = Accumulation.ago(x1_pred, False)
+        x_pred = Accumulation.ago(x1_pred, self.x_orig[0], False)
         return x_pred
 
 
@@ -52,7 +52,7 @@ class BernoulliGM():
         self.n = n
 
     def fit(self, x_orig):
-        x1 = Accumulation.ago(x_orig, True)
+        x1 = Accumulation.ago(x_orig, None, True)
         z1 = ModelMethod.basegm(x1)
         z1_square = np.power(z1, self.n)
         B = ModelMethod.construct_matrix(z1, z1_square)
@@ -61,9 +61,9 @@ class BernoulliGM():
         return self
 
     def predict(self, t):
-        all_t = np.arange(1, np.max(t)+1)
+        all_t = np.arange(1, np.max(t))
         x1_pred = _res_funcs.res_funcs[self.mdl_name].compute(self.params, all_t, self.x_orig[0], self.n)
-        x_pred = Accumulation.ago(x1_pred, False)
+        x_pred = Accumulation.ago(x1_pred, self.x_orig[0], False)
         return x_pred
 
 
@@ -72,7 +72,7 @@ class DGM():
         self.mdl_name = 'dgm11'
 
     def fit(self, t, x_orig):
-        x1 = Accumulation.ago(x_orig, True)
+        x1 = Accumulation.ago(x_orig, None, True)
         z1 = ModelMethod.based(x1)
         ones_array = np.diff(t).astype(np.float64)
         ones_array = ones_array.reshape([-1, 1])
@@ -82,9 +82,9 @@ class DGM():
         return self
 
     def predict(self, t):
-        all_t = np.arange(1, np.max(t)+1)
+        all_t = np.arange(0, np.max(t))
         x1_pred = _res_funcs.res_funcs[self.mdl_name].compute(self.params, all_t, self.x_orig[0])
-        x_pred = Accumulation.ago(x1_pred, False)
+        x_pred = Accumulation.ago(x1_pred, self.x_orig[0], False)
         return x_pred
 
 
@@ -93,46 +93,45 @@ class GMN():
         self.mdl_name = 'gm1n'
 
     def fit(self, t, x_orig):
-        x1 = Accumulation.agom(x_orig, True)
-        x1_0 = x1[0:,0]
+        x1 = Accumulation.agom(x_orig, None, True)
+        x1_0 = x1[0:, 0]
         z1 = ModelMethod.basegm(x1_0)
-        n_array = x1[1:,1:]
+        n_array = x1[1:, 1:]
         B = ModelMethod.construct_matrix(z1, n_array)
         self.x_orig = x_orig
-        self.params = ModelMethod.params(B, np.array(x_orig)[0:,0])
+        self.params = ModelMethod.params(B, np.array(x_orig)[0:, 0])
         self.x1 = x1
         return self
 
     def predict(self, t):
-        all_t = np.arange(1, np.max(t)+1)
+        all_t = np.arange(0, np.max(t))
         x1_pred = _res_funcs.res_funcs[self.mdl_name].compute(self.params, all_t, self.x1)
-        x_pred = Accumulation.agom(x1_pred, False)
+        x_pred = Accumulation.agom(x1_pred, self.x_orig[0][0], False)
         return x_pred
 
 
-# class DGMN():
-#     def __init__(self):
-#         self.mdl_name = 'dgm1n'
-#
-#     def fit(self, t, x_orig):
-#         x1 = ModelMethod.agom(x_orig, True)
-#         ones_array = np.diff(t).astype(np.float64)
-#         ones_array = ones_array.reshape([-1, 1])
-#         x1_0 = x1[0:,0]
-#         x1_n = x1[1:,1:]
-#         B_x = ModelMethod.construct_matrix(-x1_0, x1_n)
-#         B = ModelMethod.construct_matrix(-B_x, ones_array)
-#         self.x_orig = x_orig
-#         self.params = ModelMethod.params(B, np.array(x_orig)[0:, 0])
-#         self.x1 = x1
-#
-#     def predict(self, t):
-#         all_t = np.arange(t[-1])
-#         x1_pred = _res_funcs.res_funcs[self.mdl_name].compute(self.params, all_t, self.x1)
-#         x_pred = ModelMethod.agom(x1_pred, False)
-#         return x_pred
+class DGMN():
+    def __init__(self):
+        self.mdl_name = 'dgm1n'
 
+    def fit(self, t, x_orig):
+        x1 = Accumulation.agom(x_orig, None, True)
+        ones_array = np.diff(t).astype(np.float64)
+        ones_array = ones_array.reshape([-1, 1])
+        x1_0 = x1[0:-1, 0]
+        x1_0 = x1_0.reshape([-1, 1])
+        x1_n = x1[1:, 1:]
+        B_x = ModelMethod.construct_matrix(-x1_0, x1_n)
+        B = ModelMethod.construct_matrix(-B_x, ones_array)
+        self.x_orig = x_orig
+        self.params = ModelMethod.params(B, np.array(x_orig)[0:, 0])
+        self.x1 = x1
 
+    def predict(self, t):
+        all_t = np.arange(0, np.max(t))
+        x1_pred = _res_funcs.res_funcs[self.mdl_name].compute(self.params, all_t, self.x1)
+        x_pred = Accumulation.agom(x1_pred, self.x_orig[0][0], False)
+        return x_pred
 
 # test
 # g = GM('gm11')

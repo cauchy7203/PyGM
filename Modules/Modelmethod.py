@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def basegm(x1):
     x1 = np.array(list(x1))
     z1 = 0.5 * (x1[1:] + x1[:-1])

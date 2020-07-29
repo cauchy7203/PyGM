@@ -9,6 +9,7 @@ class GM_ResFunc():
         a = params[0]
         b = params[1]
         x1_pred = (x_0 - b / a) * np.exp(-a * t) + b / a
+        print(x1_pred)
         return x1_pred
 
 
@@ -53,24 +54,24 @@ class GMN_ResFunc():
         a = params[0]
         b = params[1:]
         lens_0 = len(np.array(x1[0:, 0]))
-        c = np.zeros(11)
+        c = np.zeros(lens_0)
         for i in range(0, lens_0):
-            c[i] = sum(b * x1[i, 1:])
+            c[i] = np.sum(b * x1[i, 1:])
         x1_pred = (x1[0][0] - c / a) / np.exp(a * t) + c / a
         return x1_pred
 
 
-# class DGMN_ResFunc():
-#     def __init__(self):
-#         pass
-#
-#     def compute(self, params, t, x1):
-#         a = params[0]
-#         u = params[-1]
-#         b = params[1:-1]
-#         lens = len(t)
-#         c = []
-#         for k in range(0, 11):
-#             for m in range(0, k):
-#                 for i in range(1, 5):
-#                     c[k] = sum((a**m)*(sum(b * x1[])))
+class DGMN_ResFunc():
+    def __init__(self):
+        pass
+
+    def compute(self, params, t, x1):
+        a = params[0]
+        u = params[-1]
+        b = params[1:-1]
+        lens_0 = len(np.array(x1[0:, 0]))
+        c = np.zeros(lens_0)
+        for i in range(0, lens_0):
+            c[i] = np.sum((a ** i) * np.sum(b * x1[i, 1:]))
+        x1_pred = (a ** t) * x1[0][0] + c + (1 - (a ** t) / (1 - a)) * u
+        return x1_pred
