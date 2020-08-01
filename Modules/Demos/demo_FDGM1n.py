@@ -1,4 +1,4 @@
-from CommonOperation.GreyModels import DGMN
+from CommonOperation.FGreyModels import FDGMN
 import numpy as np
 
 x = [[560823, 542386, 604834, 591248, 583031, 640636, 575688, 689637, 570790, 519574, 614677],
@@ -9,11 +9,11 @@ x = [[560823, 542386, 604834, 591248, 583031, 640636, 575688, 689637, 570790, 51
 x = np.array(x).T
 t = np.arange(len(np.array(x)[0:, 0])) + 1
 
-dgmm = DGMN()
-x1 = dgmm.fit(t, x)
+fdgmm = FDGMN(1)
+x1 = fdgmm.fit(t, x)
 t = t.reshape([-1, 1])
 t_x = np.concatenate((t, x1), axis=1)
 
-y_predict = dgmm.predict(t_x)
+y_predict = fdgmm.predict(t_x)
 print(x)
 print(y_predict)
