@@ -9,7 +9,6 @@ class GM_ResFunc():
         a = params[0]
         b = params[1]
         x1_pred = (x_0 - b / a) * np.exp(-a * t) + b / a
-        print(x1_pred)
         return x1_pred
 
 

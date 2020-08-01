@@ -1,15 +1,16 @@
 from CommonOperation import ModelMethod
 from CommonOperation import _res_funcs
-from CommonOperation import Accumulation
+from CommonOperation import FractionalAccumulation
 import numpy as np
 
 
-class GM():
-    def __init__(self):
+class FGM():
+    def __init__(self, r=0.5):
         self.mdl_name = 'gm11'
+        self.r = r
 
     def fit(self, x, y):
-        x1 = Accumulation.ago(y, None, True)
+        x1 = FractionalAccumulation.fago(y, self.r)
         z1 = ModelMethod.get_backvalue(x1)
         ones_array = np.diff(x).astype(np.float64)
         ones_array = ones_array.reshape([-1, 1])
@@ -21,16 +22,17 @@ class GM():
     def predict(self, t):
         all_t = np.arange(0, np.max(t))
         x1_pred = _res_funcs.res_funcs[self.mdl_name].compute(self.params, all_t, self.x_orig[0])
-        x_pred = Accumulation.ago(x1_pred, self.x_orig[0], False)
+        x_pred = FractionalAccumulation.fago(x1_pred, -self.r)
         return x_pred
 
 
-class NGM():
-    def __init__(self):
+class FNGM():
+    def __init__(self, r=0.5):
         self.mdl_name = 'ngm11'
+        self.r = r
 
     def fit(self, x, y):
-        x1 = Accumulation.ago(y, None, True)
+        x1 = FractionalAccumulation.fago(y, self.r)
         z1 = ModelMethod.get_backvalue(x1)
         arange_array = x[1:]
         arange_array = arange_array.reshape([-1, 1])
@@ -42,17 +44,18 @@ class NGM():
     def predict(self, t):
         all_t = np.arange(0, np.max(t))
         x1_pred = _res_funcs.res_funcs[self.mdl_name].compute(self.params, all_t, self.x_orig[0])
-        x_pred = Accumulation.ago(x1_pred, self.x_orig[0], False)
+        x_pred = FractionalAccumulation.fago(x1_pred, -self.r)
         return x_pred
 
 
-class BernoulliGM():
-    def __init__(self, n=2):
+class FBernoulliGM():
+    def __init__(self, n=2, r=0.5):
         self.mdl_name = 'bergm'
         self.n = n
+        self.r = r
 
     def fit(self, y):
-        x1 = Accumulation.ago(y, None, True)
+        x1 = FractionalAccumulation.fago(y, self.r)
         z1 = ModelMethod.get_backvalue(x1)
         z1_square = np.power(z1, self.n)
         B = ModelMethod.construct_matrix(z1, z1_square)
@@ -63,16 +66,17 @@ class BernoulliGM():
     def predict(self, t):
         all_t = np.arange(1, np.max(t))
         x1_pred = _res_funcs.res_funcs[self.mdl_name].compute(self.params, all_t, self.x_orig[0], self.n)
-        x_pred = Accumulation.ago(x1_pred, self.x_orig[0], False)
+        x_pred = FractionalAccumulation.fago(x1_pred, -self.r)
         return x_pred
 
 
-class DGM():
-    def __init__(self):
+class FDGM():
+    def __init__(self, r=0.5):
         self.mdl_name = 'dgm11'
+        self.r = r
 
     def fit(self, x, y):
-        x1 = Accumulation.ago(y, None, True)
+        x1 = FractionalAccumulation.fago(y, self.r)
         z1 = ModelMethod.based(x1)
         ones_array = np.diff(x).astype(np.float64)
         ones_array = ones_array.reshape([-1, 1])
@@ -84,16 +88,17 @@ class DGM():
     def predict(self, t):
         all_t = np.arange(0, np.max(t))
         x1_pred = _res_funcs.res_funcs[self.mdl_name].compute(self.params, all_t, self.x_orig[0])
-        x_pred = Accumulation.ago(x1_pred, self.x_orig[0], False)
+        x_pred = FractionalAccumulation.fago(x1_pred, -self.r)
         return x_pred
 
 
-class NDGM():
-    def __init__(self):
+class FNDGM():
+    def __init__(self, r=0.5):
         self.mdl_name = 'ndgm'
+        self.r = r
 
     def fit(self, x, y):
-        x1 = Accumulation.ago(y, None, True)
+        x1 = FractionalAccumulation.fago(y, self.r)
         z1 = ModelMethod.based(x1)
         ones_array = np.diff(x).astype(np.float64)
         ones_array = ones_array.reshape([-1, 1])
@@ -109,16 +114,22 @@ class NDGM():
     def predict(self, t):
         all_t = np.arange(0, np.max(t))
         x1_pred = _res_funcs.res_funcs[self.mdl_name].compute(self.params, all_t, self.x1)
-        x_pred = Accumulation.ago(x1_pred, self.x_orig[0], False)
+        x_pred = FractionalAccumulation.fago(x1_pred, -self.r)
         return x_pred
 
 
-class GMN():
-    def __init__(self):
+class FGMN():
+    def __init__(self, r=0.5):
         self.mdl_name = 'gm1n'
+        self.r = r
 
     def fit(self, x, y):
-        x1 = Accumulation.agom(y, None, True)
+        lens_1 = len(y[0, 0:])
+        y1 = y.T
+        x1 = np.zeros(y1.shape)
+        for i in range(0, lens_1):
+            x1[i, 0:] = FractionalAccumulation.fago(y1[i, 0:], self.r)
+        x1 = x1.T
         x1_0 = x1[0:, 0]
         z1 = ModelMethod.get_backvalue(x1_0)
         n_array = x1[1:, 1:]
@@ -132,16 +143,22 @@ class GMN():
         all_t = t_x[0:, 0]
         x1 = t_x[0:, 1:]
         x1_pred = _res_funcs.res_funcs[self.mdl_name].compute(self.params, all_t, x1)
-        x_pred = Accumulation.agom(x1_pred, self.x_orig[0][0], False)
+        x_pred = FractionalAccumulation.fago(x1_pred, -self.r)
         return x_pred
 
 
-class DGMN():
-    def __init__(self):
+class FDGMN():
+    def __init__(self, r=0.5):
         self.mdl_name = 'dgm1n'
+        self.r = r
 
     def fit(self, x, y):
-        x1 = Accumulation.agom(y, None, True)
+        lens_1 = len(y[0, 0:])
+        y1 = y.T
+        x1 = np.zeros(y1.shape)
+        for i in range(0, lens_1):
+            x1[i, 0:] = FractionalAccumulation.fago(y1[i, 0:], self.r)
+        x1 = x1.T
         ones_array = np.diff(x).astype(np.float64)
         ones_array = ones_array.reshape([-1, 1])
         x1_0 = x1[0:-1, 0]
@@ -158,5 +175,5 @@ class DGMN():
         all_t = t_x[0:, 0]
         x1 = t_x[0:, 1:]
         x1_pred = _res_funcs.res_funcs[self.mdl_name].compute(self.params, all_t, x1)
-        x_pred = Accumulation.agom(x1_pred, self.x_orig[0][0], False)
+        x_pred = FractionalAccumulation.fago(x1_pred, -self.r)
         return x_pred
