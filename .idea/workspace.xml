@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f04cd624-6c6d-470f-9b8b-a12846cc0702" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommonOperations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PyGM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PyGM.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_NIP_BernoulliGM.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_NIP_BernoulliGM.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +24,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CommonOperations" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitPys\PyGM\CommonOperations" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GitPys\PyGM" />
     </key>
@@ -41,6 +46,7 @@
       <updated>1595389040567</updated>
       <workItem from="1595389046416" duration="14000" />
       <workItem from="1596295437539" duration="136000" />
+      <workItem from="1596542692606" duration="121000" />
     </task>
     <servers />
   </component>
@@ -52,5 +58,9 @@
       <screen x="1440" y="0" width="1440" height="860" />
     </state>
     <state x="1940" y="185" key="FileChooserDialogImpl/0.0.1440.860/1440.0.1440.860@1440.0.1440.860" timestamp="1595389058840" />
+    <state x="648" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1596542693978">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="648" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596542693978" />
   </component>
 </project>
