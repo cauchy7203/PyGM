@@ -2,10 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f04cd624-6c6d-470f-9b8b-a12846cc0702" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CommonOperations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PyGM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PyGM.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonOperations/_res_funcs_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonOperations/_res_func_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_BernoulliGM.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_BernoulliGM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_DGM11.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_DGM11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_DGM1n.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_DGM1n.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_FBernoulliGM.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_FBernoulliGM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_FDGM11.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_FDGM11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_FDGM1n.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_FDGM1n.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_FGM11.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_FGM11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_FGM1n.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_FGM1n.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_FNDGM11.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_FNDGM11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_FNGM11.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_FNGM11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_GM11.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_GM11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_GM1N.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_GM1N.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_NDGM11.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_NDGM11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_NGM11.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_NGM11.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Demos/demo_NIP_BernoulliGM.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_NIP_BernoulliGM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_NIP_DGM11.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_NIP_DGM11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_NIP_DGM1n.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_NIP_DGM1n.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_NIP_GM11.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_NIP_GM11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_NIP_GM1n.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_NIP_GM1n.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_NIP_NDGM11.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_NIP_NDGM11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/demo_NIP_NGM11.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/demo_NIP_NGM11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FGreyModels.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/FGreyModels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/GreyModels.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/GreyModels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/NIPGreyModels.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/NIPGreyModels.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +47,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/CommonOperations" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -33,6 +61,58 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GitPys\PyGM" />
     </key>
+  </component>
+  <component name="RunManager" selected="Python.demo_NIP_DGM1n">
+    <configuration name="demo_NIP_BernoulliGM" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PyGM" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Demos" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Demos/demo_NIP_BernoulliGM.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="demo_NIP_DGM1n" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PyGM" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Demos" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Demos/demo_NIP_DGM1n.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.demo_NIP_DGM1n" />
+        <item itemvalue="Python.demo_NIP_BernoulliGM" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -47,6 +127,7 @@
       <workItem from="1595389046416" duration="14000" />
       <workItem from="1596295437539" duration="136000" />
       <workItem from="1596542692606" duration="121000" />
+      <workItem from="1596543425729" duration="1497000" />
     </task>
     <servers />
   </component>
@@ -58,9 +139,29 @@
       <screen x="1440" y="0" width="1440" height="860" />
     </state>
     <state x="1940" y="185" key="FileChooserDialogImpl/0.0.1440.860/1440.0.1440.860@1440.0.1440.860" timestamp="1595389058840" />
-    <state x="648" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1596542693978">
+    <state width="1860" height="279" key="GridCell.Tab.0.bottom" timestamp="1596545876611">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="648" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596542693978" />
+    <state width="1860" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596545876611" />
+    <state width="1860" height="279" key="GridCell.Tab.0.center" timestamp="1596545876610">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596545876610" />
+    <state width="1860" height="279" key="GridCell.Tab.0.left" timestamp="1596545876610">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596545876610" />
+    <state width="1860" height="279" key="GridCell.Tab.0.right" timestamp="1596545876611">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596545876611" />
+    <state x="648" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1596543427186">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="648" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596543427186" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PyGM$demo_NIP_DGM1n.coverage" NAME="demo_NIP_DGM1n Coverage Results" MODIFIED="1596543689190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Demos" />
+    <SUITE FILE_PATH="coverage/PyGM$demo_NIP_BernoulliGM.coverage" NAME="demo_NIP_BernoulliGM Coverage Results" MODIFIED="1596543616153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Demos" />
   </component>
 </project>
