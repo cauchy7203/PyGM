@@ -1,4 +1,4 @@
-from Models.GreyModels import GMN
+from Modules.GreyModels import GMN
 import numpy as np
 
 x = [[560823, 542386, 604834, 591248, 583031, 640636, 575688, 689637, 570790, 519574, 614677],
