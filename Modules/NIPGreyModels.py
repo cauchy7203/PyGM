@@ -1,6 +1,6 @@
-from CommonOperation import ModelMethod
-from CommonOperation import _res_funcs
-from CommonOperation import NewInformationPriorityAccumulation
+from CommonOperations import ModelMethod
+from CommonOperations import _res_funcs
+from CommonOperations import NewInformationPriorityAccumulation
 import numpy as np
 
 
