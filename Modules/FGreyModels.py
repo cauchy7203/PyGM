@@ -30,7 +30,7 @@ class FGM():
 
 class FNGM():
     def __init__(self, r=0.5):
-        self.mdl_name = 'ngm11'
+        self.mdl_name = 'ngm'
         self.r = r
 
     def fit(self, x, y):
@@ -125,9 +125,11 @@ class FGMN():
         self.mdl_name = 'gm1n'
         self.r = r
 
-    def fit(self, x, y):
-        lens_1 = len(y[0, 0:])
-        y1 = y.T
+    def fit(self, y, x):
+        x_train = x[0:, 1:]
+        y_conect = np.concatenate((y, x_train), axis=1)
+        lens_1 = len(y_conect[0, 0:])
+        y1 = y_conect.T
         x1 = np.zeros(y1.shape)
         for i in range(0, lens_1):
             x1[i, 0:] = FractionalAccumulation.fago(y1[i, 0:], self.r)
@@ -141,10 +143,9 @@ class FGMN():
         self.x1 = x1
         return x1
 
-    def predict(self, t_x):
-        all_t = t_x[0:, 0]
-        x1 = t_x[0:, 1:]
-        x1_pred = _res_func_list.res_funcs[self.mdl_name].compute(self.params, all_t, x1)
+    def predict(self, x):
+        all_t = x[0:, 0]
+        x1_pred = _res_func_list.res_funcs[self.mdl_name].compute(self.params, all_t, self.x1)
         x_pred = FractionalAccumulation.fago(x1_pred, -self.r)
         return x_pred
 
@@ -154,14 +155,17 @@ class FDGMN():
         self.mdl_name = 'dgm1n'
         self.r = r
 
-    def fit(self, x, y):
-        lens_1 = len(y[0, 0:])
-        y1 = y.T
+    def fit(self, y, x):
+        x_train = x[0:, 1:]
+        t = x[0:, 0]
+        y_conect = np.concatenate((y, x_train), axis=1)
+        lens_1 = len(y_conect[0, 0:])
+        y1 = y_conect.T
         x1 = np.zeros(y1.shape)
         for i in range(0, lens_1):
             x1[i, 0:] = FractionalAccumulation.fago(y1[i, 0:], self.r)
         x1 = x1.T
-        ones_array = np.diff(x).astype(np.float64)
+        ones_array = np.diff(t).astype(np.float64)
         ones_array = ones_array.reshape([-1, 1])
         x1_0 = x1[0:-1, 0]
         x1_0 = x1_0.reshape([-1, 1])
@@ -173,9 +177,8 @@ class FDGMN():
         self.x1 = x1
         return x1
 
-    def predict(self, t_x):
-        all_t = t_x[0:, 0]
-        x1 = t_x[0:, 1:]
-        x1_pred = _res_func_list.res_funcs[self.mdl_name].compute(self.params, all_t, x1)
+    def predict(self, x):
+        all_t = x[0:, 0]
+        x1_pred = _res_func_list.res_funcs[self.mdl_name].compute(self.params, all_t, self.x1)
         x_pred = FractionalAccumulation.fago(x1_pred, -self.r)
         return x_pred

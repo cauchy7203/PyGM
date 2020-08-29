@@ -7,13 +7,17 @@ x = [[560823, 542386, 604834, 591248, 583031, 640636, 575688, 689637, 570790, 51
      [131.6, 135.5, 142.6, 143.2, 142.2, 138.4, 138.4, 135, 122.5, 87.2, 96.5],
      [54.2, 54.9, 54.8, 56.3, 54.5, 54.6, 54.9, 54.8, 49.3, 41.5, 48.9]]
 x = np.array(x).T
+y = x[0:, 0]
+x = x[0:, 1:]
+y = y.reshape([-1, 1])
 t = np.arange(len(np.array(x)[0:, 0])) + 1
 t = t.reshape([-1, 1])
-gmm = GMN()
-x1 = gmm.fit(t, x)
+print(t)
+print(x)
+t_x = np.concatenate((t, x), axis=1)
 
-t_x = np.concatenate((t, x1), axis=1)
+gmm = GMN()
+gmm.fit(y, t_x)
 
 y_predict = gmm.predict(t_x)
-print(x)
 print(y_predict)
