@@ -359,8 +359,8 @@ class Formula_expression_gm():
 
     def formula_expression(self, mdl, t_train, x0_train, t_test, x0_test, **kwargs):
         if (mdl.is_fitted == True):
-            x, t, a, b = py.symbols('x t a b')
-            x = py.Function('x')
+            x, t, a, b = py.symbols('alpha_smo t a b')
+            x = py.Function('alpha_smo')
 
             mdl.params = np.round(mdl.params, 4)
 
@@ -383,8 +383,8 @@ class Formula_expression_ngm():
 
     def formula_expression(self, mdl, t_train, x0_train, t_test, x0_test, **kwargs):
         if (mdl.is_fitted == True):
-            x, t, a, b = py.symbols('x t a b')
-            x = py.Function('x')
+            x, t, a, b = py.symbols('alpha_smo t a b')
+            x = py.Function('alpha_smo')
 
             mdl.params = np.round(mdl.params, 4)
 
@@ -406,8 +406,8 @@ class Formula_expression_bernoulligm():
 
     def formula_expression(self, mdl, t_train, x0_train, t_test, x0_test, **kwargs):
         if (mdl.is_fitted == True):
-            x, t, a, b, N = py.symbols('x t a b N')
-            x = py.Function('x')
+            x, t, a, b, N = py.symbols('alpha_smo t a b N')
+            x = py.Function('alpha_smo')
 
             mdl.params = np.round(mdl.params, 4)
 
@@ -430,8 +430,8 @@ class Formula_expression_dgm():
 
     def formula_expression(self, mdl, t_train, x0_train, t_test, x0_test, **kwargs):
         if (mdl.is_fitted == True):
-            x, t, b1, b2 = py.symbols('x t b1 b2')
-            x = py.Function('x')
+            x, t, b1, b2 = py.symbols('alpha_smo t b1 b2')
+            x = py.Function('alpha_smo')
 
             mdl.params = np.round(mdl.params, 4)
 
@@ -453,8 +453,8 @@ class Formula_expression_ndgm():
 
     def formula_expression(self, mdl, t_train, x0_train, t_test, x0_test, **kwargs):
         if (mdl.is_fitted == True):
-            x, t, b1, b2, b3, b4 = py.symbols('x t b1 b2 b3 b4')
-            x = py.Function('x')
+            x, t, b1, b2, b3, b4 = py.symbols('alpha_smo t b1 b2 b3 b4')
+            x = py.Function('alpha_smo')
 
             mdl.params = np.round(mdl.params, 4)
 
@@ -488,8 +488,8 @@ class Formula_expression_gmn():
 
     def formula_expression(self, mdl, y_train, t_x_train, y_test, t_x_test, **kwargs):
         if (mdl.is_fitted == True):
-            x, t, b1, bn = py.symbols('x t b1 bn')
-            x = py.Function('x')
+            x, t, b1, bn = py.symbols('alpha_smo t b1 bn')
+            x = py.Function('alpha_smo')
 
             mdl.params = np.round(mdl.params, 4)
 

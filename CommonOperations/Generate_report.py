@@ -901,8 +901,8 @@ class generate_report():
 
     # 各模型公式
     def formula_expression_gm(self, mdl):
-        x, t, a, b = py.symbols('x t a b')
-        x = py.Function('x')
+        x, t, a, b = py.symbols('alpha_smo t a b')
+        x = py.Function('alpha_smo')
 
         mdl.params = np.round(mdl.params, 4)
 
@@ -914,8 +914,8 @@ class generate_report():
         return eq1
 
     def formula_expression_ngm(self, mdl):
-        x, t, a, b = py.symbols('x t a b')
-        x = py.Function('x')
+        x, t, a, b = py.symbols('alpha_smo t a b')
+        x = py.Function('alpha_smo')
 
         mdl.params = np.round(mdl.params, 4)
 
@@ -926,8 +926,8 @@ class generate_report():
         return eq1
 
     def formula_expression_bernoulligm(self, mdl):
-        x, t, a, b, N = py.symbols('x t a b N')
-        x = py.Function('x')
+        x, t, a, b, N = py.symbols('alpha_smo t a b N')
+        x = py.Function('alpha_smo')
 
         mdl.params = np.round(mdl.params, 4)
 
@@ -939,8 +939,8 @@ class generate_report():
         return eq1
 
     def formula_expression_dgm(self, mdl):
-        x, t, b1, b2 = py.symbols('x t b1 b2')
-        x = py.Function('x')
+        x, t, b1, b2 = py.symbols('alpha_smo t b1 b2')
+        x = py.Function('alpha_smo')
 
         mdl.params = np.round(mdl.params, 4)
 
@@ -951,8 +951,8 @@ class generate_report():
         return eq1
 
     def formula_expression_ndgm(self, mdl):
-        x, t, b1, b2, b3, b4 = py.symbols('x t b1 b2 b3 b4')
-        x = py.Function('x')
+        x, t, b1, b2, b3, b4 = py.symbols('alpha_smo t b1 b2 b3 b4')
+        x = py.Function('alpha_smo')
 
         mdl.params = np.round(mdl.params, 4)
 
@@ -975,8 +975,8 @@ class generate_report():
         return eq
 
     def formula_expression_gmn(self, mdl):
-        x, x1, xn, t, a, b1, bn = py.symbols('x x1 xn t a b1 bn')
-        x = py.Function('x')
+        x, x1, xn, t, a, b1, bn = py.symbols('alpha_smo x1 xn t a b1 bn')
+        x = py.Function('alpha_smo')
 
         mdl.params = np.round(mdl.params, 4)
 
