@@ -14,3 +14,6 @@ gm.fit(t, x)
 y_predict = gm.predict(t)
 print(x)
 print(y_predict)
+
+print(gm.params)
+print(gm.B)
