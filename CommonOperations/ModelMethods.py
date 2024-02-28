@@ -23,5 +23,5 @@ def construct_matrix(z1, ones_array):
 def get_params(B, Y):
     Y = np.array(list(Y))
     Y = Y.reshape([-1, 1])
-    params = np.matmul(np.linalg.pinv(B), Y[1:, 0])
+    params = np.matmul(np.linalg.pinv(B), Y)
     return (params)
