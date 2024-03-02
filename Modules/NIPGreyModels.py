@@ -144,7 +144,7 @@ class NIPGMN():
         n_array = x1[1:, 1:]
         B = ModelMethods.construct_matrix(z1, n_array)
         self.x_orig = y
-        self.params = ModelMethods.get_params(B, np.array(y)[1:, 0])
+        self.params = ModelMethods.get_params(B, np.array(x1)[1:, 0] - np.array(x1)[0:-1, 0])
         self.x1 = x1
         return self
 
@@ -184,7 +184,7 @@ class NIPDGMN():
         B_x = ModelMethods.construct_matrix(-x1_0, x1_n)
         B = ModelMethods.construct_matrix(-B_x, ones_array)
         self.x_orig = y
-        self.params = ModelMethods.get_params(B, np.array(y)[1:, 0])
+        self.params = ModelMethods.get_params(B, np.array(x1)[1:, 0])
         self.x1 = x1
         return self
 
